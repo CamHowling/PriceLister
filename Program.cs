@@ -35,17 +35,12 @@ namespace SuppliesPriceLister
                     var megacorpSupplies = jsonService.GetSuppliesFromMegacorp();
 
                     var supplies = humphriesSupplies.Concat(megacorpSupplies);
-                    var sortedSupplies = supplies.OrderByDescending(supply => supply.Price);
+                    var sortedSupplies = supplies.OrderByDescending(supply => supply.CostAud);
                     foreach(var supply in sortedSupplies)
                     {
                         Console.WriteLine(supply.ToString());
                         Console.WriteLine();
                     }
-
-                    //process megacorp
-                    //  This includes ensuring that all guids are unique - if they are not, need to adjust...
-                    //  megacorp needs to be adjusted from USD to AUD
-                    //retrieve megacorp
                 }
 
                 runHost(host);

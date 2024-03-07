@@ -20,7 +20,6 @@ namespace buildxact_supplies.Services
                     row[1],
                     row[2], 
                     costAud: double.Parse(row[3]),
-                    costUsd: null,
                     providerId: null,
                     materialType: null
                     );

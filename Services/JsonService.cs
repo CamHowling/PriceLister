@@ -5,13 +5,23 @@ using System.Collections.Generic;
 using buildxact_supplies.Domain.Entities;
 using buildxact_supplies.Domain.Models;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace buildxact_supplies.Services
 {
     public class JsonService : IJsonService
     {
+        private readonly IConfiguration _configuration;
+
+        public JsonService(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public List<Supply> GetSuppliesFromMegacorp()
         {
+            var exchangeRate = double.Parse(_configuration["audUsdExchangeRate"]);
+
             var supplyDTOs = ReadMegacorp();
             var supplies = new List<Supply>();
             foreach (var supplyDTO in supplyDTOs)
@@ -20,8 +30,7 @@ namespace buildxact_supplies.Services
                    Guid.NewGuid(),
                    supplyDTO.Description,
                    supplyDTO.Uom,
-                   costAud: null,
-                   costUsd: supplyDTO.PriceInCents / 100,
+                   costAud: (supplyDTO.PriceInCents / 100) * exchangeRate,
                    providerId: supplyDTO.ProviderId,
                    materialType: supplyDTO.MaterialType
                    );
