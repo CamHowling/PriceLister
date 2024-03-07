@@ -26,7 +26,6 @@ namespace SuppliesPriceLister
 
             using (IHost host = builder.Build())
             {
-                //in the very least can method extract...
                 using (IServiceScope scope = host.Services.CreateScope())
                 {
                     IJsonService jsonService = scope.ServiceProvider.GetRequiredService<IJsonService>();
