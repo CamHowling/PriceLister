@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Configuration;
 
 namespace buildxact_supplies.Domain.Entities
 {
