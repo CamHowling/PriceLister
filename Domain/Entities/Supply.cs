@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace buildxact_supplies.Domain.Entities
 {
-    internal class Supply
+    public class Supply
     {
+        public Guid Id { get; set; } 
+        public string Description { get; set; }
+        public string Uom { get; set; }
+        public int PriceInCents { get; set; }
+        public string ProviderId { get; set; }
+        public string MaterialType { get; set; }
     }
 }
