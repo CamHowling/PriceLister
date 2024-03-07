@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using buildxact_supplies.Services.Interfaces;
 
 namespace buildxact_supplies.Services
 {
-    internal class CsvService
+    public class CsvService : ICsvService
     {
     }
 }

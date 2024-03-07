@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace buildxact_supplies.Services.Interfaces
 {
-    internal class ICSVService
+    public interface ICsvService
     {
     }
 }
