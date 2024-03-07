@@ -1,11 +1,35 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "NuGet.CommandLine/6.9.1": {
+        "type": "package"
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "NuGet.CommandLine/6.9.1": {
+      "sha512": "FgmFOLcJqeMdgnUV8b/NHYwrL/ti88RPwHhKE0TYXOolvPCiO3Bv6bU/XulXSYRit3fSJ3UViYsd0YRqOoicZg==",
+      "type": "package",
+      "path": "nuget.commandline/6.9.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "NOTICES.txt",
+        "README.md",
+        "icon.png",
+        "nuget.commandline.6.9.1.nupkg.sha512",
+        "nuget.commandline.nuspec",
+        "tools/NuGet.exe",
+        "tools/NuGet.pdb"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "NuGet.CommandLine >= 6.9.1"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\WolfsMind\\.nuget\\packages\\": {}
@@ -45,6 +69,14 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "NuGet.CommandLine": {
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[6.9.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

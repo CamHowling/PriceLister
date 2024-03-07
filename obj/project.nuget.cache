@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "r7yegeeWwVHLYkhyRMPLS+YysbHfZ1l/v5P9p20ZNgBwavPJb+vhXlocZAffLZZB+bxQf94snfusd4/1QaWMZA==",
+  "dgSpecHash": "MQqcEyn/CzJLwPsmLAbQek6NLchhbUP7TJRyESrgcbQ16B2DOao/0+hRBW3NyOzaopTm8CN8ME5PlNGj+2VoDg==",
   "success": true,
   "projectFilePath": "E:\\TechnicalTests\\PriceLister\\SuppliesPriceLister.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\WolfsMind\\.nuget\\packages\\nuget.commandline\\6.9.1\\nuget.commandline.6.9.1.nupkg.sha512"
+  ],
   "logs": []
 }
