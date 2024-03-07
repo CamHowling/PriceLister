@@ -8,5 +8,6 @@ namespace buildxact_supplies.Services.Interfaces
 {
     public interface ICsvService
     {
+        void PrintHumphries();
     }
 }

@@ -15,8 +15,9 @@ namespace SuppliesPriceLister
 
         static void Main(string[] args)
         {
-            var builder = Host.CreateDefaultBuilder(args)
-              .ConfigureServices((hostContext, services) =>
+            var builder = Host.CreateDefaultBuilder(args);
+
+            builder.ConfigureServices((hostContext, services) =>
               {
                   services.AddSingleton<IJsonService, JsonService>();
                   services.AddSingleton<ICsvService, CsvService>();
@@ -24,10 +25,12 @@ namespace SuppliesPriceLister
 
             using (IHost host = builder.Build())
             {
+                //Consider adding an intermediate service to demonstrate a more typical approach to DI
                 using (IServiceScope scope = host.Services.CreateScope())
                 {
                     IJsonService jsonService = scope.ServiceProvider.GetRequiredService<IJsonService>();
                     ICsvService csvService = scope.ServiceProvider.GetRequiredService<ICsvService>();
+                    csvService.PrintHumphries();
                 }
 
                 runHost(host);
