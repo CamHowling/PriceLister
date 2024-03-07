@@ -24,18 +24,30 @@ namespace buildxact_supplies.Domain.Entities
             MaterialType = materialType;
         }
 
-        //need to update
         public double Price
         {
             get
             {
-                return (double)this.CostAud;
+                if (this.CostAud != null)
+                {
+                    var price = (double)this.CostAud;
+                    return price;
+                }
+
+                if (this.CostUsd != null)
+                {
+                    var usdPrice = (double)this.CostUsd;
+                    var price = usdPrice; //need to update to use utility class//appsettings
+                    return price;
+                }
+
+                else return 0;
             }
         }
 
         public override string ToString()
         {
-            var output = this.Id.ToString() + ", " + this.Description + ", " + this.Price.ToString(); //potentially add toFixed(2)
+            var output = Id.ToString() + ", " + Description + ", " + Price.ToString("N2");
             return output;
         }
     }
