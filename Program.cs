@@ -2,7 +2,7 @@
 using buildxact_supplies.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-
+using System;
 
 namespace SuppliesPriceLister
 {
@@ -26,11 +26,27 @@ namespace SuppliesPriceLister
             using (IHost host = builder.Build())
             {
                 //Consider adding an intermediate service to demonstrate a more typical approach to DI
+                //in the very least can method extract...
                 using (IServiceScope scope = host.Services.CreateScope())
                 {
                     IJsonService jsonService = scope.ServiceProvider.GetRequiredService<IJsonService>();
                     ICsvService csvService = scope.ServiceProvider.GetRequiredService<ICsvService>();
-                    csvService.PrintHumphries();
+                    var humphriesSupplies = csvService.GetSuppliesFromHumphries();
+                    
+                    foreach(var supply in humphriesSupplies)
+                    {
+                        Console.WriteLine(supply.ToString());
+                    }
+                    //structure:
+                    //process humphries
+                    //retrieve supplies
+                    //process megacorp
+                    //  This includes ensuring that all guids are unique - if they are not, need to adjust...
+                    //  megacorp needs to be adjusted from USD to AUD
+                    //retrieve megacorp
+
+                    //sort all by price
+                    //print with newline between; fields: Id, Item Name, and Price
                 }
 
                 runHost(host);
