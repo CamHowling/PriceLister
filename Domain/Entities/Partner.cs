@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace buildxact_supplies.Domain.Entities
 {
-    internal class Partner
+    public class Partner
     {
+        public string Name { get; set; }
+        public string PartnerType { get; set; }
+        public string PartnerAddress { get; set; }
+        public List<Supply> Supplies { get; set; }
     }
 }
