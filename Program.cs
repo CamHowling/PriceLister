@@ -40,6 +40,8 @@ namespace SuppliesPriceLister
                         Console.WriteLine(supply.ToString());
                         Console.WriteLine();
                     }
+
+                    Console.ReadLine();
                 }
 
                 runHost(host);
