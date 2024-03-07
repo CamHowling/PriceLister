@@ -32,9 +32,10 @@ namespace SuppliesPriceLister
                     IJsonService jsonService = scope.ServiceProvider.GetRequiredService<IJsonService>();
                     ICsvService csvService = scope.ServiceProvider.GetRequiredService<ICsvService>();
                     var humphriesSupplies = csvService.GetSuppliesFromHumphries();
+                    var megacorpSupplies = jsonService.GetSuppliesFromMegacorp();
 
-                    //need to replace supplies selected
-                    var sortedSupplies = humphriesSupplies.OrderByDescending(supply => supply.Price);
+                    var supplies = humphriesSupplies.Concat(megacorpSupplies);
+                    var sortedSupplies = supplies.OrderByDescending(supply => supply.Price);
                     foreach(var supply in sortedSupplies)
                     {
                         Console.WriteLine(supply.ToString());
