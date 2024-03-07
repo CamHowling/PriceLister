@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MQqcEyn/CzJLwPsmLAbQek6NLchhbUP7TJRyESrgcbQ16B2DOao/0+hRBW3NyOzaopTm8CN8ME5PlNGj+2VoDg==",
+  "dgSpecHash": "ahTENSHJzlTmytMCS6hvzVNEI5qMMMMYvQUZhkuWJKb+ZjUS+hJdOBLMtN8DcfZX4m5k0FlX8JYpqcDNTA9S8w==",
   "success": true,
   "projectFilePath": "E:\\TechnicalTests\\PriceLister\\SuppliesPriceLister.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\WolfsMind\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\WolfsMind\\.nuget\\packages\\nuget.commandline\\6.9.1\\nuget.commandline.6.9.1.nupkg.sha512"
   ],
   "logs": []
